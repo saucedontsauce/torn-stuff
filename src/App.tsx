@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import store from "@shared/store.ts";
 import RateLimiter from "@shared/calls.ts";
 
 import { Nav } from "./components/Nav.tsx";
@@ -24,6 +23,7 @@ import {
   ToolsPage,
   CompanyHomePage,
   FactionHomePage,
+  UserHomePage,
 } from "@pages";
 
 export interface IAccess {
@@ -39,7 +39,7 @@ function App() {
     localStorage.getItem("apiKey"),
   );
   const [keyAccess, setKeyAccess] = useState<IAccess | null>(null);
-  const [userId, setUserId] = useState<UserId | null>(null);
+  const [uid, setUserId] = useState<UserId | null>(null);
   const [factionId, setFactionId] = useState<FactionId | null>(null);
   const [companyId, setCompanyId] = useState<CompanyId | null>(null);
   useEffect(() => {
@@ -72,7 +72,7 @@ function App() {
     window.addEventListener("storage", listener);
     listener();
     return () => window.removeEventListener("storage", listener);
-  }, []);
+  }, [apiKey]);
   return (
     <div className="d-flex flex-column vh-100">
       <Nav restricted={apiKey ? false : true} />
@@ -102,6 +102,12 @@ function App() {
             path="/tools"
             element={apiKey ? <ToolsPage /> : <Navigate to="/" />}
           />
+
+          <Route
+            path="/user"
+            element={apiKey ? <UserHomePage uid={uid} /> : <Navigate to="/" />}
+          />
+
           <Route path="/faction" element={<FactionHomePage />} />
           <Route
             path="/faction/warreport"

@@ -13,6 +13,8 @@ import { default as SettingsPage } from "./Settings/index.tsx";
 
 import { default as ToolsPage } from "./Tools/index.tsx";
 
+import { default as UserHomePage } from "./User/index.tsx";
+
 export {
   NotFoundPage,
   CompanyHomePage,
@@ -22,4 +24,5 @@ export {
   ScriptsPage,
   SettingsPage,
   ToolsPage,
+  UserHomePage,
 };

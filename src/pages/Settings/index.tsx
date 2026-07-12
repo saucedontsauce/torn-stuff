@@ -1,4 +1,4 @@
-import { Row, Col, Container, Card, Button } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import { Navigate } from "react-router-dom";
 import store from "../../shared/store.ts";
 import StorageCard from "./Storage/index";
