@@ -5,8 +5,8 @@ import * as path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/torn-stuff/",
   plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
+  base: "/torn-stuff/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "./src"),
