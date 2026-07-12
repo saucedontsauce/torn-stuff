@@ -1,5 +1,12 @@
-# React + TypeScript + Vite
+# Torn Stuff
 
+Built to compile my torn stuff into one place for easyt reerence.
+
+Generally going to be split into 2 Categories Scripts and Tools, Scripts are UserScripts usually also hostedon GreasyFork.com and Tools are web tools that require a torn.com API key.
+
+All usage of API keys is only done locally and non of your details will be sent outside your browser unless you consent to future programs. You will be informed via popups when a new beta feature is available for signups.
+
+<center> Everything after this is default vite framework stuff </center>
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:
